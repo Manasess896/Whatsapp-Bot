@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Terms of Service - WhatsApp Bot</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+  <div class="container py-5">
+    <div class="card shadow-lg border-0 rounded-4">
+      <div class="card-body p-5">
+        <h1 class="mb-4 text-center text-primary">Terms of Service</h1>
+        <p class="text-muted text-center">Effective Date: September 7, 2025</p>
+        <hr>
+
+        <h3>1. Acceptance of Terms</h3>
+        <p>
+          By using this WhatsApp Bot (“the Bot”), you agree to these Terms of Service. 
+          If you do not agree, please stop using the Bot immediately.
+        </p>
+
+        <h3>2. Service Description</h3>
+        <p>
+          The Bot provides automated responses to messages sent via WhatsApp. 
+          It uses Google’s Gemini AI API (if enabled) to generate replies. 
+          The Bot is provided “as is” without guarantees.
+        </p>
+
+        <h3>3. User Responsibilities</h3>
+        <ul>
+          <li>You agree not to use the Bot for illegal, abusive, or harmful purposes.</li>
+          <li>You must not attempt to interfere with or disrupt the Bot’s functionality.</li>
+          <li>You acknowledge that the Bot may generate automated responses that may not always be accurate or appropriate.</li>
+        </ul>
+
+        <h3>4. Data and Privacy</h3>
+        <p>
+          The Bot does not permanently store personal data. 
+          Please review our <a href="privacy.html" class="text-decoration-none">Privacy Policy</a> for full details on how messages are processed.
+        </p>
+
+        <h3>5. Service Availability</h3>
+        <p>
+          We may modify, suspend, or terminate the Bot at any time without prior notice. 
+          We are not liable for any interruptions or loss resulting from changes or downtime.
+        </p>
+
+        <h3>6. Limitation of Liability</h3>
+        <p>
+          To the maximum extent permitted by law, we are not responsible for any damages, losses, or issues that arise from your use of the Bot, 
+          including but not limited to reliance on AI-generated content.
+        </p>
+
+        <h3>7. Third-Party Services</h3>
+        <p>
+          The Bot integrates with third-party platforms, including Meta (WhatsApp) and Google (Gemini AI). 
+          Your use of the Bot is also subject to their terms and policies:
+        </p>
+        <ul>
+          <li><a href="https://www.whatsapp.com/legal/terms-of-service" target="_blank">WhatsApp Terms of Service</a></li>
+          <li><a href="https://ai.google.dev/terms" target="_blank">Google AI Terms of Service</a></li>
+        </ul>
+
+        <h3>8. Governing Law</h3>
+        <p>
+          These Terms shall be governed by the laws of Kenya, without regard to conflict of law principles.
+        </p>
+
+        <h3>9. Contact</h3>
+        <p>
+          For any questions about these Terms, you can contact us at:
+        </p>
+        <ul>
+          <li>Email: <a href="mailto:manasesskamau1053@gmail.com">manasesskamau1053@gmail.com</a></li>
+          <li>WhatsApp: <a href="https://wa.me/2541114471302" target="_blank">+2541114471302</a></li>
+        </ul>
+
+        <hr>
+     
+      </div>
+    </div>
+  </div>
+</body>
+</html>
