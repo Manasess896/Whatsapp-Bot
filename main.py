@@ -112,8 +112,11 @@ def generate_ai_reply(user_text: str) -> str:
         print("Gemini error:", e)
         return "Sorry, I couldn't process that. Please try again."
 
+# if __name__ == "__main__":
+#     app.run(port=5000, debug=True)
 if __name__ == "__main__":
-    app.run(port=5000, debug=True)
+    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
+
 # import secrets
 # print(secrets.token_hex(16))
 
