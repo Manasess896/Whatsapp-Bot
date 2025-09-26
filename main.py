@@ -100,7 +100,7 @@ def generate_ai_reply(user_text: str) -> str:
         return default_reply
 
     try:
-        //model = genai.GenerativeModel("gemini-1.5-flash")
+       
 model = genai.GenerativeModel("gemini-1.5-flash-002")
         prompt = (
             "You are a concise, helpful assistant for WhatsApp. "
