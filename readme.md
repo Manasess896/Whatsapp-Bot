@@ -1,12 +1,12 @@
 
-# WhatsApp Bot with Gemini API
+# WhatsApp Bot with Groq API
 
-This project is a simple WhatsApp bot that uses the Google Gemini API (via `google-generativeai`) to generate AI-powered replies. It is built with Flask and can be deployed on any server that supports Python 3.8+.
+This project is a simple WhatsApp bot that uses the Groq API to generate AI-powered replies. It is built with Flask and can be deployed on any server that supports Python 3.8+.
 
 ## Features
 
 - Receives WhatsApp messages via Meta's webhook
-- Replies using Google Gemini (Generative AI, model: `gemini-1.5-flash` by default)
+- Replies using Groq's LLaMA models (model: `llama3-8b-8192` by default)
 - Handles both incoming messages and status updates (delivered/read)
 - Easy `.env`-based configuration
 
@@ -14,7 +14,7 @@ This project is a simple WhatsApp bot that uses the Google Gemini API (via `goog
 
 - Python 3.8 or newer
 - WhatsApp Cloud API access (Meta for Developers)
-- Google Gemini API key ([get one here](https://aistudio.google.com/app/apikey))
+- Groq API key ([get one here](https://console.groq.com/keys))
 
 ## Setup
 
@@ -30,7 +30,7 @@ This project is a simple WhatsApp bot that uses the Google Gemini API (via `goog
   WHATSAPP_TOKEN=your_whatsapp_access_token
   PHONE_NUMBER_ID=your_phone_number_id
   VERIFY_TOKEN=your_webhook_verify_token
-  GOOGLE_API_KEY=your_google_gemini_api_key
+  GROQ_API_KEY=your_groq_api_key
   ```
 
   - `WHATSAPP_TOKEN`: Get from your Meta for Developers dashboard (WhatsApp Cloud API > API Token).
@@ -41,7 +41,7 @@ This project is a simple WhatsApp bot that uses the Google Gemini API (via `goog
     print(secrets.token_hex(16))
     ```
     Copy the output and set it as your VERIFY_TOKEN in `.env`.
-  - `GOOGLE_API_KEY`: Get from [Google AI Studio](https://aistudio.google.com/app/apikey) (requires a Google account).
+  - `GROQ_API_KEY`: Get from [Groq Console](https://console.groq.com/keys) (requires a Groq account).
 ## Development Workflow
 
 - Use `worker.py` to automatically restart the bot when you edit `main.py` during development. This script watches for changes and reloads the bot, so you don't have to restart manually.
@@ -52,10 +52,10 @@ This project is a simple WhatsApp bot that uses the Google Gemini API (via `goog
   Press Ctrl+C to stop the watcher and the bot.
 
 
-## How the Bot Uses Gemini
+## How the Bot Uses Groq
 
-- The bot uses the `gemini-1.5-flash` model by default for fast, cost-effective, and concise WhatsApp replies. You can change the model in `main.py` (see the `generate_ai_reply` function) to other Gemini models like `gemini-1.5-pro` for more advanced responses (may be slower or costlier).
-- The system prompt is set in code to instruct Gemini to be concise, helpful, and friendly, and to keep replies under 2-3 sentences. This prompt is always sent before the user's message, so the bot's tone and style are consistent for every chat.
+- The bot uses the `llama3-8b-8192` model by default for fast, cost-effective, and concise WhatsApp replies. You can change the model in `main.py` (see the `generate_ai_reply` function) to other Groq models like `llama3-70b-8192` for more advanced responses (may be slower or costlier).
+- The system prompt is set in code to instruct the LLaMA model to be concise, helpful, and friendly, and to keep replies under 2-3 sentences. This prompt is always sent before the user's message, so the bot's tone and style are consistent for every chat.
 - You can customize the prompt or model in `main.py` to fit your use case.
 
 3. **Run the bot:**
@@ -81,16 +81,16 @@ This project is a simple WhatsApp bot that uses the Google Gemini API (via `goog
 - [Flask](https://flask.palletsprojects.com/) - Web server
 - [python-dotenv](https://pypi.org/project/python-dotenv/) - Loads environment variables
 - [requests](https://docs.python-requests.org/) - HTTP requests
-- [google-generativeai](https://pypi.org/project/google-generativeai/) - Gemini API client
+- [groq](https://pypi.org/project/groq/) - Groq API client
 
 ## Where to Get API Keys & Setup Guides
 
 - **WhatsApp Cloud API:**
   - Follow the official Meta guide: [Get Started with WhatsApp Cloud API](https://developers.facebook.com/docs/whatsapp/cloud-api/get-started?nav_ref=biz_unified_f3_login_page_to_dfc)
   - This covers creating a Meta developer account, setting up an app, getting your WhatsApp token, phone number ID, and configuring webhooks.
-- **Google Gemini API:**
-  - Go to [Google AI Studio](https://aistudio.google.com/app/apikey)
-  - Sign in, create an API key, and copy it to your `.env` as `GOOGLE_API_KEY`.
+- **Groq API:**
+  - Go to [Groq Console](https://console.groq.com/keys)
+  - Sign in, create an API key, and copy it to your `.env` as `GROQ_API_KEY`.
 
 ## Notes & Troubleshooting
 
@@ -98,8 +98,8 @@ This project is a simple WhatsApp bot that uses the Google Gemini API (via `goog
 - For production, always use HTTPS and keep your tokens/keys secret.
 - In the Meta developer dashboard, use the provided test number for development. Using your real number may result in a ban.
 - If you see errors about missing keys or tokens, double-check your `.env` file and restart the bot.
-- If you get a `Gemini configure error`, your API key may be invalid or expired.
-- If the bot only echoes messages, your Gemini API key is missing or not loaded.
+- If you get a `Groq configure error`, your API key may be invalid or expired.
+- If the bot only echoes messages, your Groq API key is missing or not loaded.
 
 ## How to generate longer lasting tokens
 <!-- Add your instructions here or link to Meta documentation -->
