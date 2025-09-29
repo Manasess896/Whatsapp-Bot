@@ -1,5 +1,4 @@
-Flask
-gunicorn
-requests
-python-dotenv
-google-generativeai
+Flask>=3.0.0
+python-dotenv>=1.0.1
+requests>=2.32.0
+groq>=0.8.0
